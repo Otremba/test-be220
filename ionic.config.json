@@ -1,0 +1,7 @@
+{
+  "name": "Gym-test",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,117 @@
+<ion-app>
+  <ion-menu contentId="main-content">
+    <ion-header class="header-menu">
+      <ion-toolbar color="tertiary">
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content color="tertiary" class="ion-padding">
+      <ion-item color="tertiary">
+        <ion-label>HOME</ion-label>
+      </ion-item>
+    </ion-content>
+  </ion-menu>
+  <div class="ion-page" id="main-content">
+    <ion-header class="menu-component" collapse="fade">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+          <ion-img
+            src="https://orienteacademia.com.br/wp-content/uploads/2018/02/Logo-Oriente-Academia-Branco_Logotipo-Original.png"
+            alt="Logo"
+          ></ion-img>
+        </ion-title>
+        <ion-buttons slot="end">
+          <div class="icon">
+            <ion-icon name="notifications"></ion-icon>
+          </div>
+          <div class="notify"></div>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <div class="header-user">
+      <section class="start">
+        <div class="img">
+          <ion-img
+            src="https://adsoncoach.com.br/wp-content/uploads/2018/07/foto-redonda-300x300.png"
+            alt="profile image"
+          ></ion-img>
+        </div>
+        <div class="data">
+          <div class="name">Leonardo Santos</div>
+          <div class="nivel">Nivel Roxo</div>
+        </div>
+
+      </section>
+      <section class="end">
+        <div class="buttons">
+          <ion-button class="bt1"><ion-icon name="body"></ion-icon>MEU CORPO</ion-button>
+          <ion-button class="bt2"><ion-icon name="trophy"></ion-icon>OBJETIVOS E CONQUISTAS</ion-button>
+        </div>
+      </section>
+    </div>
+    <ion-content class="main">
+      <section class="s-slider">
+        <div class="header-slider">PERSONAL ONLINE<ion-icon name="add"></ion-icon></div>
+        <div class="slider">
+          <swiper-container [slidesPerView]="1.5" [loop]="true">
+            <swiper-slide>
+              <div style="background-repeat: no-repeat; background-size: cover; background-image: url(https://img.freepik.com/fotos-premium/um-fisiculturista-com-barba-esta-fazendo-biceps-com-uma-barra-curta-em-uma-academia_221404-3840.jpg);" class="slide">
+                <ion-label class="label-new">
+                  <ion-icon name="add"></ion-icon> NOVO<br/>TREINO
+                </ion-label>
+              </div>
+            </swiper-slide>
+            <swiper-slide *ngFor="let treino of treinos">
+              <div style="background-repeat: no-repeat; background-size: cover; background-image: url({{treino.img}});" class="slide">
+                <ion-label>
+                  {{treino.title}}
+                </ion-label>
+              </div>
+            </swiper-slide>
+          </swiper-container>
+        </div>
+      </section>
+      <section class="s-slider">
+        <div class="header-slider">PROGRAMAS <ion-label class="new-icon">New</ion-label></div>
+        <div class="slider">
+          <swiper-container [slidesPerView]="1.5" [loop]="true">
+            <swiper-slide>
+              <div style="background-repeat: no-repeat; background-size: cover; background-image: url(https://img.freepik.com/fotos-premium/um-fisiculturista-com-barba-esta-fazendo-biceps-com-uma-barra-curta-em-uma-academia_221404-3840.jpg);" class="slide">
+                <ion-label class="sub-label">
+                  Continuar Treinando
+                </ion-label>
+                <ion-label style="height: auto !important;" class="label">
+                  Levantamento Terra
+                </ion-label>
+              </div>
+            </swiper-slide>
+            <swiper-slide *ngFor="let treino of treinos">
+              <div style="background-repeat: no-repeat; background-size: cover; background-image: url({{treino.img}});" class="slide">
+                <ion-label>
+                  {{treino.title}}
+                </ion-label>
+              </div>
+            </swiper-slide>
+          </swiper-container>
+        </div>
+      </section>
+      <section class="s-slider">
+        <div class="header-slider">CONTEÚDOS<ion-icon name="add"></ion-icon></div>
+        <div class="slider">
+          <swiper-container [slidesPerView]="1.5" [loop]="true">
+            <swiper-slide *ngFor="let treino of treinos">
+              <div style="background-repeat: no-repeat; background-size: cover; background-image: url({{treino.img}});" class="slide">
+                <ion-label>
+                  {{treino.title}}
+                </ion-label>
+              </div>
+            </swiper-slide>
+          </swiper-container>
+        </div>
+      </section>
+    </ion-content>
+  </div>
+</ion-app>
